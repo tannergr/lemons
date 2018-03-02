@@ -13,12 +13,12 @@
       //   return $dbConnection;
       // }
 
-      $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+      private $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-      $server = $url["host"];
-      $username = $url["user"];
-      $password = $url["pass"];
-      $db = substr($url["path"], 1);
+      private $server = $url["host"];
+      private $username = $url["user"];
+      private $password = $url["pass"];
+      private $db = substr($url["path"], 1);
       public function connect(){
         $mysql_connect_str = "mysql:host=$this->server;dbname=$this->db;";
         $dbConnection = new PDO($mysql_connect_str, $this->username, $this->password);
