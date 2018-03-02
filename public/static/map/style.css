@@ -1,0 +1,297 @@
+#map {
+  height: 100%;
+}
+a[href^="http://maps.google.com/maps"],
+a[href^="https://maps.google.com/maps"],
+a[href^="https://www.google.com/maps"] {
+    display: none !important;
+}
+.gmnoprint:not(.gm-bundled-control) {
+    display: none;
+}
+.gm-bundled-control .gmnoprint {
+    display: block;
+}
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
+ /* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: 'Raleway', sans-serif;
+}
+.logo{
+  float:left;
+}
+#userinput{
+  float: left;
+  width: 10%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  top:0;
+  background-color: rgba(237,28,36, 0.9);
+  display: inline-block;
+  padding-top: 25px;
+}
+#location{
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  margin: 10px 0 10px 20px;
+  font-family: 'Raleway', sans-serif;
+}
+#dayInput, #etype, #comments{
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  margin: 0 0 21px 0px;
+}
+#dayInput>option, #etype>option{
+  background-color: rgba(192, 57, 43,1.0);
+  color: white
+}
+
+#Day, #event, option{
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  padding-bottom: 1px;
+  margin: 10px 0 10px 20px;
+}
+#startevent, #startDay, option{
+ font-family: 'Raleway', sans-serif;
+ background-color: transparent;
+ border: none;
+ border-bottom: solid 1px;
+ border-color: white;
+ color: white;
+ font-size: 24px;
+ padding-bottom: 1px;
+}
+#startlocation{
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  margin: 10px 0 10px 0;
+}
+#Day>option, #event>option,#startevent>option,
+#startDay>option, .pac-container{
+  background-color: rgba(52, 73, 94,0.9);
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+.pac-container {
+    z-index: 1051 !important;
+    background-color: rgba(52, 73, 94,1);
+}
+.pac-item-query{
+  color:white;
+}
+.pac-item-selected, .pac-item:hover{
+  background-color: rgba(52, 73, 94,1);
+  z-index: 102;
+}
+.activities{
+  display: inline-block;
+}
+.activity{
+  height: 30px;
+  width: 24px;
+  margin-left: 30px;
+}
+#taco{
+  background-color: yellow;
+  float: left;
+}
+#kare{
+  background-color: orange;
+  float: left;
+}
+#triv{
+  background-color: green;
+  float: left;
+}
+.controls{
+  display: inline-block;
+}
+::-webkit-input-placeholder { /* Chrome, Safari */
+   color:  rgba(255, 255, 255, 0.7);
+   font-size: 24px;
+}
+
+:-moz-placeholder {           /* Firefox 18- */
+   color:rgba(255, 255, 255, 0.7);
+   font-size: 24px;
+}
+
+::-moz-placeholder {          /* Firefox 19+ */
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+}
+
+:-ms-input-placeholder {      /* Internet Explorer */
+  color:rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+}
+.ui.sidebar{
+  background-color: rgba(236, 240, 241,1.0);
+  padding: 0 5% 0 5% ;
+  height:100%;
+}
+.ui.sidebar>h1{
+  font-size: 32px;
+}
+#google-reviews{
+  overflow-y: scroll;
+  height: 60%;
+}
+#ww{
+  background-color: rgba(52, 73, 94,0.8);
+}
+#ww>.header{
+  border-bottom: solid 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+#ww>.header, #ww>.content, #ww>.actions{
+  background: rgba(52, 73, 94,0);
+  background-color: rgba(52, 73, 94,0);
+}
+#ww>.content{
+  color: white;
+  width:inherit;
+}
+.left{
+  float: left;
+  min-width: 40%;
+  border-top: 1px;
+}
+.right{
+  float: right;
+  min-width: 50%;
+}
+#searchbutton{
+    float:right;
+    margin: 3%;
+}
+.ui.dimmer{
+  background: rgba(0, 0, 0, 0.6);
+}
+h1.welcome{
+  margin: 5px 0 0 5px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+p.welcome{
+  font-size: 24px;
+}
+.adminlogin{
+  bottom: 0;
+  left: 0;
+  position:fixed;
+  padding: 20px;
+  font-size: 24px;
+}
+.adminlogin>a:hover{
+  color: white;
+}
+.adminlogin>a{
+  text-decoration: none;
+  color: black;
+}
+.addbutton{
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  margin-right: 5px;
+  text-decoration: none;
+  float: right;
+  border-radius: 3px;
+  padding: 10px;
+}
+.addbutton:hover{
+  background-color: rgba(255,255,255,0.5);
+}
+.moreInfo{
+  background-color: rgba(52, 73, 94,1);
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+
+}
+.moreInfo:hover{
+  background-color: rgba(52, 73, 94,0.7);
+}
+h1.header, h2.header{
+  padding:0;
+  margin:0;
+}
+h1.header{
+  color:#2c3e50;
+}
+h2.header{
+  color:#d35400;
+}
+.header.heading{
+  font-size: 32px;
+  padding: 30px 0 30px 0;
+}
+.header.option{
+  font-size: 24px;
+  padding: 15px 0 30px 0;
+}
+.hide{
+  text-align: center;
+  font-size: 26px;
+  width: 100%;
+  padding: 30px 0;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 5px;
+}
+.hide:hover{
+  background-color: rgba(255,255,255,0.8);
+}
+.show.menu{
+  top: 0;
+  left: 0;
+  margin: 10px;
+  padding: 10px;
+  position: fixed;
+  display:none;
+  z-index: 999;
+  font-size: 32px;
+  border-radius: 5px;
+}
+.show.menu:hover{
+  background-color: rgba(255,255,255,0.8);
+}
+.resCount{
+  text-align: center;
+}
+.footNote{
+  position: absolute;
+   bottom: 0;
+   left: 0;
+   margin: 20px;
+}

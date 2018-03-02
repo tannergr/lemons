@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="static/shared/markerclusterer.js">
+    </script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      mapStyle = [
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+];
+      function initMap() {
+        var vancouver = {lat: 49.267, lng: -123.1455};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: vancouver,
+          styles: mapStyle
+        });
+        urlBase = "api/places";
+        var markers = [];
+        $.ajax({
+            url: urlBase,
+            type: 'GET',
+            headers: {"accessToken": "accessToken"},
+            success: function(res) {
+            r = JSON.parse(res);
+            r.forEach((place)=>{
+              console.log(place);
+              var infowindow = new google.maps.InfoWindow({
+                content: "Hello World"
+              });
+
+              var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(place.lat, place.lon),
+                icon: 'static/shared/map-marker.svg',
+                title: place.name
+              });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+              markers.push(marker);
+          });
+          var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'static/shared/images/m'});
+        }});
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxoB_lMLGScuwVei5rmN-usckcNu_tMj0&callback=initMap">
+    </script>
+  </body>
+</html>

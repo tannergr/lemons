@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>We Never Do Anything</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/checkbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/checkbox.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/form.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/input.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/divider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/sidebar.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+  <script src="static/map/javascript.js"></script>
+  <script src="static/map/infobubble.js"></script>
+  <script src="static/shared/markerclusterer.js"></script>
+  <script type="text/javascript" src="static/map/mapStyle.js"></script>
+  <link rel="stylesheet" type="text/css"
+  <link rel="stylesheet" href="static/map/style.css">
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.3.1&key=AIzaSyBxoB_lMLGScuwVei5rmN-usckcNu_tMj0&libraries=places&callback=initAutocomplete"
+       async defer></script>
+
+
+
+</head>
+
+
+<body>
+    <div class="show menu"><i class="fas fa-bars"></i></div>
+
+    <div class="ui very thin sidebar visible" style="min-width:300px;">
+      <div class="header heading">Find Food</div>
+      <div class="header option">What matters to you:</div>
+      <div class="item">
+        <label for="cutlery">Bring your own cutlery</label>
+        <div class="ui toggle checkbox left" style="text-align:left;">
+          <input type="checkbox" id="cutlery" name="cutlery" tabindex="0" class="hidden">
+
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="item">
+        <label for="plate">Bring your own plate</label>
+        <div class="ui toggle checkbox left" style="text-align:left;">
+          <input type="checkbox" id="plate" name="plate" tabindex="0" class="hidden">
+
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="item" >
+        <label for="compost">Composting</label>
+        <div class="ui toggle checkbox left"  style="text-align:left;">
+          <input type="checkbox" id="compost" name="compost" tabindex="0" class="hidden">
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="resCount"></div>
+      <div class="ui divider"></div>
+        <div class="hide">Hide Menu</div>
+
+        <div class="footNote">
+          Beta <br> version 0.0.0.0.1<br> Tanner Graham
+        </div>
+    </div>
+    <!-- </div>
+  </div> -->
+  <div class="pusher">
+    <div style="height:100%; width:100%;">
+      <div id="map">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
