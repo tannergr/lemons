@@ -1,0 +1,132 @@
+<head>
+
+   <link rel="stylesheet" href="/static/add/style.css">
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/container.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/header.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/image.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/form.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/input.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/button.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/list.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/message.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/checkbox.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/transition.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/checkbox.js"></script>
+
+  <script src="/static/add/javascript.js">
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxoB_lMLGScuwVei5rmN-usckcNu_tMj0&libraries=places&callback=initAutocomplete"
+       async defer></script>
+
+</head>
+
+<body >
+
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h2 class="ui green image header">
+        <img src="static/add/map-pin.svg" style="currentColor: green" class="image">
+        <div class="content">
+          Add a new location!
+        </div>
+      </h2>
+      <form class="ui large form left aligned">
+        <div class="ui stacked segment">
+          <div class="field">
+            <div id="addmap"></div><br>
+          </div>
+          <div class="field">
+            <br>
+            <div class="ui left icon input">
+              <i class="location arrow icon"></i>
+              <input id="location" type="text" name="location" placeholder="Name of Location">
+            </div>
+          </div>
+
+          <div class="field" style="text-align:left; margin-left:10%">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" id="cutlery" name="cutlery" tabindex="0" class="hidden">
+              <label>Bring your own cutlery</label>
+            </div>
+          </div>
+          <div class="field" style="text-align:left">
+            <div class="ui toggle checkbox " style="text-align:left; margin-left:10%">
+              <input type="checkbox" id="plate" name="plate" tabindex="0" class="hidden">
+              <label>Bring your own plate</label>
+            </div>
+          </div>
+          <div class="field" style="text-align:left; margin-left:10%">
+            <div class="ui toggle checkbox left" >
+              <input type="checkbox" id="compost" name="compost" tabindex="0" class="hidden">
+              <label>Compost</label>
+            </div>
+          </div>
+          <div class="field">
+            <textarea rows="2" id="comments" placeholder="Any other comments?"></textarea>
+          </div>
+          <table style="display:none">
+            <tr style="display:none"> <td>Name:</td><td><input  type="text" id="name" value="tanner"> </input> </td></tr>
+            <tr style="display:none"> <td>MapID:</td><td><input  type="text" id="mapsid"> </input> </td></tr>
+            <tr style="display:none"> <td>Lat: </td><td><input  type="number" id="lat" step="0.0000001" value="49.270995"></input></td> </tr>
+            <tr style="display:none"> <td>Long:</td><td><input  type="number" id="long" step="0.0000001" value="-123.156155"></input></td></tr>
+          </table>
+          <div class="ui fluid large green submit button submitCreate" >Submit</div>
+          </div>
+
+      </form>
+
+    </div>
+  </div>
+<!--
+<div id="addmap">
+</div>
+<div id="addinput">
+  <form>
+    <table style="background-color:rgba(255,255,2550.7)">
+
+
+      <tr class="instruction one"><td colspan="2"> Step 1: Search for the location on the map </td></tr>
+    <tr> <td>Search: </td><td><input id="location" type="text" placeholder="Location"></input></td></tr>
+    <tr style="display:none"> <td>Name:</td><td><input  type="text" id="name" value="tanner"> </input> </td></tr>
+    <tr style="display:none"> <td>MapID:</td><td><input  type="text" id="mapsid"> </input> </td></tr>
+    <tr style="display:none"> <td>Lat: </td><td><input  type="number" id="lat" step="0.0000001" value="49.270995"></input></td> </tr>
+    <tr style="display:none"> <td>Long:</td><td><input  type="number" id="long" step="0.0000001" value="-123.156155"></input></td></tr>
+
+
+    <tr class="instruction two"><td colspan="2"> Step 2: Choose sustainable options</td></tr>
+    <tr><td colspan="2">
+      <input type="checkbox" id="cutlery" name="cutlery">
+      <label for="cutlery">Bring your own cutlery</label><br>
+      <input type="checkbox" id="plate" name="plate">
+      <label for="plate">Bring your own plate</label><br>
+      <input type="checkbox" id="compost" name="compost">
+      <label for="compost">Compostable</label>
+    </td></tr>
+
+      <tr class="instruction three"><td colspan="2"> Step 4: Any other details? </td></tr>
+      <tr> <td>Comments</td><td><textarea id="comments"></textarea></td></tr>
+
+    </table>
+    <a href="#" class="submitCreate">Submit</a>
+  </form>
+  <div class="resultsOut"></div>
+</div> -->
+</body>
+</html>

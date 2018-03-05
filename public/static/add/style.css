@@ -1,0 +1,25 @@
+body, html{
+  background-color: rgba(1, 105, 54, 0.1)
+}
+.ui.grid{
+  background-color: rgba(1, 105, 54, 0.1)
+}
+body > .grid {
+  height: 100%;
+}
+.image {
+  margin-top: -100px;
+}
+.column {
+  max-width: 450px;
+}
+#addmap{
+  height: 25%;
+  width: 100%;
+  float: left;
+}
+#boxes{
+  width: 100%;
+  float:left;
+  text-align: left;
+}
